@@ -5,6 +5,5 @@ class Contact_person:
         self.id = id
     
     def display(self):
-        print(f"Id is: {self.id}")
-        print(f"Name is: {self.name}")
-        print(f"Phone is: {self.phone}")
+        print(f"Id is: {self.id} Name is: {self.name} Phone is: {self.phone}")
+

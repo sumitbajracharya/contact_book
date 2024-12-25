@@ -26,25 +26,37 @@ db_manager = DatabaseManager(host, user, password, database)
 if choice == 1:
     print ("Add a new contact")   
     name = input("Enter name: ")
-    phone = int(input("Enter phone: "))
-
+    phone = input("Enter phone: ")
     db_manager.add_person(name, phone)
 
 elif choice == 2:
     print ("View all contacts")
     db_manager.list_persons()
+
 elif choice == 3:  
     print ("Search a contact")
+    name = input("Enter name to search: ")
+    db_manager.search_person_by_name(name)
+
 elif choice == 4:
     print ("Update a contact")
+    # list contact and update
+    id = input ("please enter ID of contact to update: ")
+    db_manager.search_person(id)
+    name = input("Enter new name: ")
+    phone = input("Enter new phone: ")
+    db_manager.update_person(id, name, phone)
+
 elif choice == 5:
     print ("Delete a contact")
     Id = input ("please enter ID of contact to delete: ")
     db_manager.delete_person(Id)
+
 elif choice == 6:
     print ("Search contact by ID: ")
     Id = input ("please enter ID of contact: ")
     db_manager.search_person(Id)
+
 elif choice == 7:
     print ("Exit")
 else:
